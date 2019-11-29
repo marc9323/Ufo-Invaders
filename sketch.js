@@ -49,13 +49,6 @@ function setup() {
 }
 
 function draw() {
-    // switch (gameState) {
-    //     case START_UP:
-    //         console.log('START GAME');
-    //         textSize(96);
-    //         text('Click Mouse to Begin Game!');
-    //         break;
-    // }
     image(backgroundImage, 0, 0);
     playerShip.render();
     playerShip.move();
@@ -111,6 +104,13 @@ function draw() {
         if (invaders[i].dead) {
             invaders.splice(i, 1);
             //console.log('spliced invader');
+        }
+    }
+
+    // invader ship collision
+    for (var i = 0; i < invaders.length; i++) {
+        if (playerShip.intersects(invaders[i])) {
+            console.log('CRASH');
         }
     }
 }

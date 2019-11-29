@@ -1,6 +1,5 @@
-class PlayerShip extends Rectangle {
+class PlayerShip {
     constructor() {
-        super();
         this.x = width / 2;
         this.y = 0;
         this.xdir = 0;
@@ -41,10 +40,9 @@ class PlayerShip extends Rectangle {
         }
     }
 
-    hit(invader) {
-        if (this.intersects(invader)) {
-            console.log('INVADER SHIP COLLISION');
-            return true;
+    intersects(invader) {
+        if (invader.y > height - this.shipHeight * 2) {
+            background(255, 193, 23);
         }
     }
 

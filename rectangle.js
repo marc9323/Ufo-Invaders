@@ -1,5 +1,6 @@
 class Rectangle {
     intersects(other) {
+        console.log('Rectangle class intersect hit');
         let left = this.x;
         let right = this.x + this.width;
         let top = this.y;
